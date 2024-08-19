@@ -1,0 +1,104 @@
+<!-- Coding by Programming Hero 123 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu | CodeHub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #e3f2fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            height: 80px;
+            width: 90px;
+            border-radius: 6px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.4s linear;
+            overflow: hidden;
+        }
+
+        .container.active {
+            background-color: #de0611;
+        }
+
+        .menu {
+            position: relative;
+            height: 100%;
+            width: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu .line {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            border-radius: 6px;
+            background-color: #2c3e50;
+            transition: all 0.4s linear;
+        }
+
+        .menu .line.one {
+            top: 15px;
+        }
+
+        .menu .line.two {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .menu .line.three {
+            bottom: 15px;
+        }
+
+        .container.active .line.one {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            background-color: #fff;
+        }
+
+        .container.active .line.two {
+            opacity: 0;
+        }
+
+        .container.active .line.three {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <div class="menu">
+            <span class="line one"></span>
+            <span class="line two"></span>
+            <span class="line three"></span>
+        </div>
+    </div>
+    <script>
+        document.querySelector(".container").addEventListener("click", function() {
+            this.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>
